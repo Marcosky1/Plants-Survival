@@ -1,42 +1,35 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class Zombie : MonoBehaviour
 {
-    public float speed = 1f;
-    public int health = 3;
-    private float amount;
+    public ZombieData zombieData; 
+    private int currentHealth;
+    private ObjectPool pool;
 
-    void Update()
+    private void OnEnable()
     {
-        transform.Translate(Vector2.left * speed * Time.deltaTime);
+
+        currentHealth = zombieData.health;
+    }
+
+    public void SetObjectPool(ObjectPool objectPool)
+    {
+        pool = objectPool;
     }
 
     public void TakeDamage(int damage)
     {
-        health -= damage;
-        if (health <= 0)
+        currentHealth -= damage;
+        if (currentHealth <= 0)
         {
             Die();
         }
     }
 
-    void Die()
+    private void Die()
     {
-        gameObject.SetActive(false);  // En lugar de destruir el objeto, lo desactivamos
-    }
-
-    public void Slow(float amount, float duration)
-    {
-        speed *= amount;
-        StartCoroutine(ResetSpeed(duration));
-    }
-
-    IEnumerator ResetSpeed(float duration)
-    {
-        yield return new WaitForSeconds(duration);
-        speed /= amount;
+        pool.ReturnToPool(gameObject);
     }
 }
+
 

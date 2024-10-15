@@ -9,6 +9,7 @@ public class PlantData : ScriptableObject
     public GameObject projectilePrefab;
     public PlantType plantType;
 
+
     public enum PlantType
     {
         Normal,
