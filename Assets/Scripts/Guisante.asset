@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Guisante
   m_EditorClassIdentifier: 
   plantName: Guisante
-  damage: 10
-  fireRate: 3
-  projectilePrefab: {fileID: 5755590065983091096, guid: 1a46aa09523fdab468cefc29e0aae3b9, type: 3}
-  plantType: 0
+  damage: 20
+  health: 100
+  shootRate: 1
+  shootRange: 5
+  plantPrefab: {fileID: 2406076756837463104, guid: 972e782540fa1824f8387cd83d2d90a7, type: 3}
+  cost: 100
