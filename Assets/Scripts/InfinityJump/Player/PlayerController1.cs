@@ -23,6 +23,8 @@ public class PlayerController1 : MonoBehaviour
         rb.freezeRotation = true;
         playerCollider = GetComponent<BoxCollider2D>();
         score = 0;
+
+        playerName = PlayerPrefs.GetString("PlayerName", "Jugador");
     }
 
     void Update()
