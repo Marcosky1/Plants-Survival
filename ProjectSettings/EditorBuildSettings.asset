@@ -6,9 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Game.unity
+    path: Assets/Scenes/PlantsSurvival/Game.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 1
-    path: Assets/Scenes/GameOver.unity
+    path: Assets/Scenes/PlantsSurvival/GameOver.unity
     guid: b5c5ce6c3d98d294295200d9478e257c
+  - enabled: 1
+    path: Assets/Scenes/GameJump.unity
+    guid: 3806c33d2835c3247bc3023daa552708
+  - enabled: 1
+    path: Assets/Scenes/MenuJump.unity
+    guid: 4a372f9971d734e4c91c22d83db9977a
+  - enabled: 1
+    path: Assets/Scenes/ScoresScene.unity
+    guid: ead2cb38e46918a4eb0f69177a2637ea
   m_configObjects: {}

@@ -6,11 +6,13 @@ TagManager:
   tags:
   - Zombie
   - Plant
+  - Platform
+  - dead
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Base
   - Water
   - UI
   - 
