@@ -18,4 +18,3 @@ public class GlobalSceneManager : MonoBehaviour
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 }
-
