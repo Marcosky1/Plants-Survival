@@ -10,8 +10,8 @@ public class PlayerMovement : MonoBehaviour
     {
         rigidBody = GetComponent<Rigidbody2D>();
     }
-    public void OnMoveDirection(Vector2 direction)
+    public void OnMoveDirection(Vector2 direction, float intensity)
     {
-        rigidBody.linearVelocity = direction * _movementSpeed;
+        rigidBody.linearVelocity = direction.normalized * intensity * _movementSpeed;
     }
 }
