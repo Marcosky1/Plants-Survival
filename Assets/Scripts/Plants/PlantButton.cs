@@ -18,11 +18,11 @@ public class PlantButton : MonoBehaviour
 
     private void OnButtonClick()
     {
-        if (GameManager.Instance.Suns >= plantData.cost) 
+        if (OldGameManager.Instance.Suns >= plantData.cost) 
         {
-            GameManager.Instance.Suns -= plantData.cost; 
-            GameManager.Instance.ChangePlant(plantData); 
-            GameManager.Instance.CloseStore(); 
+            OldGameManager.Instance.Suns -= plantData.cost; 
+            OldGameManager.Instance.ChangePlant(plantData); 
+            OldGameManager.Instance.CloseStore(); 
         }
         else
         {

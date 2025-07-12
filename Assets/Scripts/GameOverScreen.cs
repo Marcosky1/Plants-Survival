@@ -8,8 +8,8 @@ public class GameOverScreen : MonoBehaviour
 
     private void Start()
     {
-        int zombiesKilled = GameManager.Instance.GetZombiesKilled();
-        float survivalTime = GameManager.Instance.GetSurvivalTime();
+        int zombiesKilled = OldGameManager.Instance.GetZombiesKilled();
+        float survivalTime = OldGameManager.Instance.GetSurvivalTime();
 
         zombiesKilledText.text = $"Zombis Eliminados: {zombiesKilled}";
         survivalTimeText.text = $"Tiempo Sobrevivido: {survivalTime:F2} segundos";

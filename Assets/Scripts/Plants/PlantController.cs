@@ -73,7 +73,7 @@ public class PlantController : MonoBehaviour
         currentHealth -= damage;
         if (currentHealth <= 0)
         {
-            GameManager.Instance.GameOver();
+            OldGameManager.Instance.GameOver();
         }
     }
 }

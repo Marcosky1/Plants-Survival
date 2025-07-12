@@ -18,8 +18,8 @@ public class Zombie : MonoBehaviour
 
     private void Die()
     {
-        GameManager.Instance.AddSuns(sunsReward);
-        GameManager.Instance.AddZombieKill();
+        OldGameManager.Instance.AddSuns(sunsReward);
+        OldGameManager.Instance.AddZombieKill();
         Debug.Log("El zombi ha muerto.");
         Destroy(gameObject);
     }
