@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class PlayerMovement : MonoBehaviour
+public class PlayerMovement : PhotonIdentity
 {
     [SerializeField] private float _movementSpeed;
 
@@ -8,10 +8,16 @@ public class PlayerMovement : MonoBehaviour
 
     private void Awake()
     {
+        if(!view.IsMine)
+            return;
+
         rigidBody = GetComponent<Rigidbody2D>();
     }
     public void OnMoveDirection(Vector2 direction, float intensity)
     {
-        rigidBody.linearVelocity = direction.normalized * intensity * _movementSpeed;
+        if (!view.IsMine)
+            return;
+
+        rigidBody.position += direction.normalized * intensity * _movementSpeed * Time.deltaTime;
     }
 }

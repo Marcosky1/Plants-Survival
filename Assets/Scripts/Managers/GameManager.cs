@@ -1,5 +1,6 @@
 using UnityEngine;
 using Assets.Scripts.GameEvents;
+using Photon.Pun;
 
 public class GameManager : NonPersistentSingleton<GameManager>
 {
@@ -30,6 +31,10 @@ public class GameManager : NonPersistentSingleton<GameManager>
     public void DestroyGameObject(GameObject victim)
     {
         Destroy(victim);
+    }
+    public void PhotonDestroyGameObject(GameObject victim)
+    {
+        PhotonNetwork.Destroy(victim);
     }
     public void DestroyComponent(Component victim)
     {
