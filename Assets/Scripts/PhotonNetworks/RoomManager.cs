@@ -5,21 +5,6 @@ using Photon.Realtime;
 using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine.Events;
-
-public class UIRoomManager : MonoBehaviour
-{
-    [Header("ROOM SETTINGS")]
-    [SerializeField] private GameObject roomHolder;
-    [SerializeField] private RectTransform roomParent;
-
-    [Header("CREATE SETTINGS")]
-    [SerializeField] private TMP_InputField roomNameInput;
-    [SerializeField] private TMP_InputField roomCodeInput;
-    [SerializeField] private Toggle isPrivateToggle;
-
-    [Header("JOIN SETTINGS")]
-    [SerializeField] private TMP_InputField joinInput;
-}
 public class RoomManager : MonoBehaviourPunCallbacks
 {
     [Header ("ROOM SETTINGS")]
@@ -82,7 +67,7 @@ public class RoomManager : MonoBehaviourPunCallbacks
     }
     public override void OnJoinedRoom()
     {
-        PhotonNetwork.LoadLevel("Game");
+        PhotonNetwork.LoadLevel("MultiplayerGame");
     }
     public override void OnLeftRoom()
     {

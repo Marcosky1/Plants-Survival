@@ -1,3 +1,4 @@
+using Photon.Pun;
 using UnityEngine;
 
 public class PlayerMovement : PhotonIdentity
@@ -8,16 +9,16 @@ public class PlayerMovement : PhotonIdentity
 
     private void Awake()
     {
-        if(!view.IsMine)
-            return;
-
-        rigidBody = GetComponent<Rigidbody2D>();
+        if (!view.IsMine || !PhotonNetwork.IsConnected)
+        {
+            rigidBody = GetComponent<Rigidbody2D>();
+        }
     }
     public void OnMoveDirection(Vector2 direction, float intensity)
     {
-        if (!view.IsMine)
-            return;
-
-        rigidBody.position += direction.normalized * intensity * _movementSpeed * Time.deltaTime;
+        if (!view.IsMine || !PhotonNetwork.IsConnected)
+        {
+            rigidBody.position += direction.normalized * intensity * _movementSpeed * Time.deltaTime;
+        }
     }
 }

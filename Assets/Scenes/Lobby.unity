@@ -2410,7 +2410,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 1554215678}
-        m_TargetAssemblyTypeName: PhotonRoomManager, Assembly-CSharp
+        m_TargetAssemblyTypeName: RoomManager, Assembly-CSharp
         m_MethodName: CreateRoom
         m_Mode: 1
         m_Arguments:
@@ -4631,6 +4631,9 @@ MonoBehaviour:
   roomCodeInput: {fileID: 0}
   isPrivateToggle: {fileID: 1663770816}
   joinInput: {fileID: 755118507}
+  _OnLeftRoom:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!4 &1554215679
 Transform:
   m_ObjectHideFlags: 0

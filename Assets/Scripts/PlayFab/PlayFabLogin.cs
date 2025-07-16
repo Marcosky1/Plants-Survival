@@ -14,8 +14,24 @@ public class PlayFabLogin : MonoBehaviour
             */
             PlayFabSettings.staticSettings.TitleId = "42";
         }
+        //var androidRequest = new LoginWithAndroidDeviceIDRequest
+        //{
+        //    AndroidDevice = SystemInfo.deviceUniqueIdentifier,
+        //    CreateAccount = true
+        //};
+        //PlayFabClientAPI.LoginWithAndroidDeviceID(androidRequest, OnLoginSuccess, OnLoginFailure);
+        //#if UNITY_ANDROID
+
+        //#elif UNITY_IOS
+        //        var iosRequest = new LoginWithIOSDeviceIDRequest
+        //        {
+        //            DeviceId = SystemInfo.deviceUniqueIdentifier, CreateAccount = true
+        //        };
+        //        PlayFabClientAPI.LoginWithIOSDeviceID(iosRequest, OnLoginSuccess, OnLoginFailure);
+        //#else
         var request = new LoginWithCustomIDRequest { CustomId = "GettingStartedGuide", CreateAccount = true };
         PlayFabClientAPI.LoginWithCustomID(request, OnLoginSuccess, OnLoginFailure);
+        //#endif
     }
 
     private void OnLoginSuccess(LoginResult result)

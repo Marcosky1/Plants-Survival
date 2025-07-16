@@ -6,6 +6,13 @@ public class SpawnPlayers : MonoBehaviour
     [SerializeField] private GameObject playerPrefab;
     private void Start()
     {
-        PhotonNetwork.Instantiate(playerPrefab.name, Vector2.zero, Quaternion.identity);
+        if (PhotonNetwork.IsConnected)
+        {
+            PhotonNetwork.Instantiate(playerPrefab.name, Vector2.zero, Quaternion.identity);
+        }
+        else
+        {
+            Instantiate(playerPrefab, Vector2.zero, Quaternion.identity);
+        }
     }
 }

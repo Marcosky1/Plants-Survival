@@ -1,10 +1,7 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
 
-[System.Serializable]
-public class JoystickInputEvent : UnityEvent<Vector2, float> { }
-
-public class VirtualJoystickInput : MonoBehaviour
+public class MobileInput : MonoBehaviour
 {
     [SerializeField] private float deadZone;
     [SerializeField] private float maxDistance;
@@ -12,7 +9,7 @@ public class VirtualJoystickInput : MonoBehaviour
     private Vector2 startTouchPosition;
     private bool isTouching = false;
 
-    public JoystickInputEvent OnJoystickInput;
+    public UnityEvent<Vector2, float> OnJoystickInput;
 
     void Update()
     {
