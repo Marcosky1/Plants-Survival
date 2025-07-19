@@ -9,7 +9,10 @@ public class PlantData : ScriptableObject
     public float shootRate;
     public float shootRange;
     public GameObject plantPrefab; 
-    public int cost; 
+    public int cost;
+    
+    public Sprite icon;
+    public GameObject prefab;
 }
 
 
